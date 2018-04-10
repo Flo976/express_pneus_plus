@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/stack-interface.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="/css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="/css/flickity.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="/css/theme.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="/css/custom.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Mina|Orbitron" rel="stylesheet"> 
+
+    </head>
+    <body data-smooth-scroll-offset="77">
+       <div style="position:fixed;width:100%;z-index:9999;top:0px;" class="nav-container bg--primary">
+            <div>
+                <div class="bar bar--sm visible-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3 col-md-2">
+                                <a href="index.html"> <img class="logo logo-dark" alt="logo" src="/img/logo-svg2.png"> <img class="logo logo-light" alt="logo" src="/img/logo-svg2.png"> </a>
+                            </div>
+                            <div class="col-9 col-md-10 text-right">
+                                <a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs hidden-sm"> <i class="icon icon--sm stack-interface stack-menu"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav id="menu1" class="bar bar-1 hidden-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-2 hidden-xs">
+                                <div class="bar__module">
+                                    <a href="/"> <img class="logo logo-dark" alt="logo" src="/img/logo-svg2.png"> <img class="logo logo-light" alt="logo" src="/img/logo-svg2.png"> </a>
+
+                                </div>
+                                 <a href="/"><h4 style="display: inline;">EXPRESS PNEUS PLUS</h4></a>
+                            </div>
+                            <div class="col-lg-7 col-md-12 text-right text-left-xs text-left-sm">
+                                <div class="bar__module">
+                                    <ul class="menu-horizontal text-left">
+                                        <li> <a href="/notre-garage">
+                                        Notre Garage
+                                    </a> </li>
+
+                                         <li> <a href="/notre-boutique">
+                                        Notre Boutique
+                                    </a> </li>
+
+                                     <li> <a href="/voitures-occasion">
+                                        Nos Voitures d'Occasion
+                                    </a> </li>
+                                    </ul>    
+                                </div>
+                                <div class="bar__module">
+                                    <a class="btn btn--sm type--uppercase" href="/contact"> <span class="btn__text">
+                                    Contact
+                                </span> </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="main-container">
+        {% block body %}{% endblock %}
+            {{ render(controller('AppBundle\\Controller\\DefaultController::occasionsAction' )) }}
+              <footer class="text-center space--sm footer-5 bg--secondary">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="heading-block">
+                                <ul class="list-inline list--hover">
+                                    <li> <a href="/notre-garage"><span>Notre Garage</span></a> </li>
+                                    <li> <a href="/notre-boutique"><span>Notre Boutique</span></a> </li>
+                                    <li> <a href="/voitures-occasion"><span>Nos Voitures d'Occasion</span></a> </li>
+                                    <li> <a href="/contact"><span>Contact</span></a> </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="social-list list-inline list--hover">
+                                    <li><a href="#"><i class="socicon socicon-google icon icon--xs"></i></a></li>
+                                    <li><a href="#"><i class="socicon socicon-twitter icon icon--xs"></i></a></li>
+                                    <li><a href="#"><i class="socicon socicon-facebook icon icon--xs"></i></a></li>
+                                    <li><a href="#"><i class="socicon socicon-instagram icon icon--xs"></i></a></li>
+                                </ul>
+                            </div>
+                            <div> <span class="type--fine-print">Made with <i class="icon color--primary icon-Heart icon--xs"></i> by <a target="_blank" href="http://passion-web.info">Passion Web</a> </span>  </div>
+                            <div> <span class="type--fine-print">© <span class="update-year"></span> Express Pneus Plus</span>  </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="/js/jquery-3.1.1.min.js"></script>
+        <script src="/js/parallax.js"></script>
+        <script src="/js/flickity.min.js"></script>
+        <script src="/js/smooth-scroll.min.js"></script>
+        <script src="/js/scripts.js"></script>
+        <style type="text/css">
+            
+            .coverimg{
+                padding-top: 50px;
+                background-image: url(/img/garage1.jpg);
+                background-repeat: none;
+                background-size: cover;
+            }
+
+        </style>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

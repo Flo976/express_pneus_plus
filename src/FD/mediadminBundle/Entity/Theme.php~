@@ -1,0 +1,654 @@
+<?php
+namespace FD\mediadminBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="theme")
+ * @ORM\Entity(repositoryClass="FD\mediadminBundle\Repository\ThemeRepository")
+*/
+class Theme 
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", nullable=true)
+     */
+    private $nom;
+
+
+    /**
+     *
+     * @ORM\Column(name="url", type="text", nullable=true)
+     */
+    private $url;
+
+    /**
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="soustitre", type="string", nullable=true)
+     */
+    private $soustitre; 
+
+    /**
+     *
+     * @ORM\Column(name="kilometrage", type="integer", nullable=true)
+     */
+    private $kilometrage;
+
+    /**
+     *
+     * @ORM\Column(name="annee", type="integer", nullable=true)
+     */
+    private $annee;
+
+    /**
+     *
+     * @ORM\Column(name="prix", type="integer", nullable=true)
+     */
+    private $prix;
+
+    /**
+     *
+     * @ORM\Column(name="nbportes", type="integer", nullable=true)
+     */
+    private $nbportes;
+
+    /**
+     *
+     * @ORM\Column(name="pfisc", type="text", nullable=true)
+     */
+    private $pfisc;
+
+    /**
+     *
+     * @ORM\Column(name="pdin", type="text", nullable=true)
+     */
+    private $pdin;
+
+    /**
+     *
+     * @ORM\Column(name="typeboite", type="text", nullable=true)
+     */
+    private $typeboite;
+
+    /**
+     *
+     * @ORM\Column(name="energie", type="text", nullable=true)
+     */
+    private $energie;
+
+    /**
+     *
+     * @ORM\Column(name="datemec", type="datetime", nullable=true)
+     */
+    private $datemec;
+
+    /**
+     *
+     * @ORM\Column(name="couleurin", type="text", nullable=true)
+     */
+    private $couleurin;
+
+    /**
+     *
+     * @ORM\Column(name="couleurext", type="text", nullable=true)
+     */
+    private $couleurext;
+
+    /**
+     *
+     * @ORM\Column(name="premieremain", type="boolean", nullable=true)
+     */
+    private $premieremain;
+
+    /**
+     *
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    private $active;
+
+     /**
+     *
+     * @ORM\Column(name="vip", type="boolean", nullable=true)
+     */
+    private $vip;
+
+    /**
+     * @ORM\OneToMany(targetEntity="FD\mediadminBundle\Entity\Media", mappedBy="theme", cascade={"persist"})
+     */
+    private $medias;
+
+     /**
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="voitures", cascade={"persist"})
+     */
+    private $tags;
+         
+   
+
+     function __toString()
+    {
+        try {
+        $val=$this->nom;
+        return $val;
+        } catch (Exception $exception) {
+        return '';
+        }
+    }
+
+   
+
+   
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom.
+     *
+     * @param string|null $nom
+     *
+     * @return Theme
+     */
+    public function setNom($nom = null)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom.
+     *
+     * @return string|null
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set soustitre
+     *
+     * @param string $soustitre
+     *
+     * @return Theme
+     */
+    public function setSoustitre($soustitre)
+    {
+        $this->soustitre = $soustitre;
+
+        return $this;
+    }
+
+    /**
+     * Get soustitre
+     *
+     * @return string
+     */
+    public function getSoustitre()
+    {
+        return $this->soustitre;
+    }
+
+    /**
+     * Set kilometrage
+     *
+     * @param integer $kilometrage
+     *
+     * @return Theme
+     */
+    public function setKilometrage($kilometrage)
+    {
+        $this->kilometrage = $kilometrage;
+
+        return $this;
+    }
+
+    /**
+     * Get kilometrage
+     *
+     * @return integer
+     */
+    public function getKilometrage()
+    {
+        return $this->kilometrage;
+    }
+
+    /**
+     * Set annee
+     *
+     * @param integer $annee
+     *
+     * @return Theme
+     */
+    public function setAnnee($annee)
+    {
+        $this->annee = $annee;
+
+        return $this;
+    }
+
+    /**
+     * Get annee
+     *
+     * @return integer
+     */
+    public function getAnnee()
+    {
+        return $this->annee;
+    }
+
+    /**
+     * Set prix
+     *
+     * @param integer $prix
+     *
+     * @return Theme
+     */
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get prix
+     *
+     * @return integer
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+
+    /**
+     * Set nbportes
+     *
+     * @param integer $nbportes
+     *
+     * @return Theme
+     */
+    public function setNbportes($nbportes)
+    {
+        $this->nbportes = $nbportes;
+
+        return $this;
+    }
+
+    /**
+     * Get nbportes
+     *
+     * @return integer
+     */
+    public function getNbportes()
+    {
+        return $this->nbportes;
+    }
+
+    /**
+     * Set pfisc
+     *
+     * @param string $pfisc
+     *
+     * @return Theme
+     */
+    public function setPfisc($pfisc)
+    {
+        $this->pfisc = $pfisc;
+
+        return $this;
+    }
+
+    /**
+     * Get pfisc
+     *
+     * @return string
+     */
+    public function getPfisc()
+    {
+        return $this->pfisc;
+    }
+
+    /**
+     * Set pdin
+     *
+     * @param string $pdin
+     *
+     * @return Theme
+     */
+    public function setPdin($pdin)
+    {
+        $this->pdin = $pdin;
+
+        return $this;
+    }
+
+    /**
+     * Get pdin
+     *
+     * @return string
+     */
+    public function getPdin()
+    {
+        return $this->pdin;
+    }
+
+    /**
+     * Set typeboite
+     *
+     * @param string $typeboite
+     *
+     * @return Theme
+     */
+    public function setTypeboite($typeboite)
+    {
+        $this->typeboite = $typeboite;
+
+        return $this;
+    }
+
+    /**
+     * Get typeboite
+     *
+     * @return string
+     */
+    public function getTypeboite()
+    {
+        return $this->typeboite;
+    }
+
+    /**
+     * Set energie
+     *
+     * @param string $energie
+     *
+     * @return Theme
+     */
+    public function setEnergie($energie)
+    {
+        $this->energie = $energie;
+
+        return $this;
+    }
+
+    /**
+     * Get energie
+     *
+     * @return string
+     */
+    public function getEnergie()
+    {
+        return $this->energie;
+    }
+
+    /**
+     * Set datemec
+     *
+     * @param \DateTime $datemec
+     *
+     * @return Theme
+     */
+    public function setDatemec($datemec)
+    {
+        $this->datemec = $datemec;
+
+        return $this;
+    }
+
+    /**
+     * Get datemec
+     *
+     * @return \DateTime
+     */
+    public function getDatemec()
+    {
+        return $this->datemec;
+    }
+
+    /**
+     * Set couleurin
+     *
+     * @param string $couleurin
+     *
+     * @return Theme
+     */
+    public function setCouleurin($couleurin)
+    {
+        $this->couleurin = $couleurin;
+
+        return $this;
+    }
+
+    /**
+     * Get couleurin
+     *
+     * @return string
+     */
+    public function getCouleurin()
+    {
+        return $this->couleurin;
+    }
+
+    /**
+     * Set couleurext
+     *
+     * @param string $couleurext
+     *
+     * @return Theme
+     */
+    public function setCouleurext($couleurext)
+    {
+        $this->couleurext = $couleurext;
+
+        return $this;
+    }
+
+    /**
+     * Get couleurext
+     *
+     * @return string
+     */
+    public function getCouleurext()
+    {
+        return $this->couleurext;
+    }
+
+    /**
+     * Set premieremain
+     *
+     * @param boolean $premieremain
+     *
+     * @return Theme
+     */
+    public function setPremieremain($premieremain)
+    {
+        $this->premieremain = $premieremain;
+
+        return $this;
+    }
+
+    /**
+     * Get premieremain
+     *
+     * @return boolean
+     */
+    public function getPremieremain()
+    {
+        return $this->premieremain;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return Theme
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set vip
+     *
+     * @param boolean $vip
+     *
+     * @return Theme
+     */
+    public function setVip($vip)
+    {
+        $this->vip = $vip;
+
+        return $this;
+    }
+
+    /**
+     * Get vip
+     *
+     * @return boolean
+     */
+    public function getVip()
+    {
+        return $this->vip;
+    }
+
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->medias = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add media
+     *
+     * @param \FD\mediadminBundle\Entity\Media $media
+     *
+     * @return Theme
+     */
+    public function addMedia(\FD\mediadminBundle\Entity\Media $media)
+    {
+        $this->medias[] = $media;
+
+        return $this;
+    }
+
+    /**
+     * Remove media
+     *
+     * @param \FD\mediadminBundle\Entity\Media $media
+     */
+    public function removeMedia(\FD\mediadminBundle\Entity\Media $media)
+    {
+        $this->medias->removeElement($media);
+    }
+
+    /**
+     * Get medias
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMedias()
+    {
+        return $this->medias;
+    }
+
+
+
+    /**
+     * Add tag
+     *
+     * @param \FD\mediadminBundle\Entity\Tag $tag
+     *
+     * @return Theme
+     */
+    public function addTag(\FD\mediadminBundle\Entity\Tag $tag)
+    {
+        $this->tags[] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Remove tag
+     *
+     * @param \FD\mediadminBundle\Entity\Tag $tag
+     */
+    public function removeTag(\FD\mediadminBundle\Entity\Tag $tag)
+    {
+        $this->tags->removeElement($tag);
+    }
+
+    /**
+     * Get tags
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     *
+     * @return Theme
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+}

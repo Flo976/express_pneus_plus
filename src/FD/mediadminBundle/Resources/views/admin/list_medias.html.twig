@@ -1,0 +1,50 @@
+{% extends 'FDmediadminBundle::base_admin.html.twig' %}
+
+{% block body %}
+
+
+
+	<section>
+ 		<div class="container">
+ 			<div class="row">
+		 		<div class="col-sm-12 tab-admin ">
+		 			
+		 				<div class="text-center">
+		 				<i class="icon icon--lg icon-Folder-Pictures white"></i>
+		 				<h1 class="white">Gestion des Medias</h1>
+		 				<div class="admin-buttons">
+                            <a class="btn btn--secondary type--uppercase" href="/dashboard/admin/add-medias">
+                                 <span class="btn__text red">
+                                    Ajouter des Médias
+                                 </span> 
+                            </a>
+                            <a class="btn btn--secondary type--uppercase" href="/dashboard/admin">
+                                 <span class="btn__text red">
+                                    Retour
+                                 </span> 
+                            </a>
+                        </div>
+		 					 				<!--<a class="btn-admin-add" href="/dashboard/admin/users/add">Ajouter un Utilisateur</a>-->
+		 			</div>
+		 		</div>
+		 		<div class="container">
+ 					<div class="row">
+		 			{% for media in medias %}
+		 				<a href="/dashboard/admin/edit-media/{{media.id}}">
+	 					<div style="margin-bottom: 10px; margin-left: 10px;" class=" white text-center">
+	 					
+	 					<img style="max-height: 200px;" src="{{media.large}}">
+	 					</div></a>	
+	 						
+		 			{% endfor %}
+		 				
+		 			
+		 		</div>
+		 		
+		 	</div>	
+ 		</div>
+ 	</section>
+
+
+
+{% endblock %}	

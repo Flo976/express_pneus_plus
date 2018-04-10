@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<section class="space--xs"></section>
+<section class="space--xs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="text-center">{{voiture.nom}} - <span> {{voiture.soustitre}} </span></h1>
+			</div>	
+				<h2 class="text-center bg--secondary">Informations Générales sur le Véhicule</h2>
+				
+						<div class="row">
+						<div class="col-md-12 w100h20">
+						
+						</div>	
+						<div class="col-md-6 text-center inline">
+						<ul>
+							<li>Kilométrage      : <span>{{voiture.kilometrage}}</span> km</li>
+							<li>Année du modèle  : <span>{{voiture.annee}}</span></li>
+							<li>Prix du véhicule : <span>{{voiture.prix}}</span></li>
+							<li>Nombre de portes : <span>{{voiture.nbportes}}</span></li>
+							<li>Type de Boite    : <span>{{voiture.typeboite}}</span></li>
+						</ul>
+						</div>
+
+						<div class="col-md-6 text-center inline">
+						<ul>
+							<li>Energie : <span>{{voiture.energie}}</span></li>
+							<li>Date de mise en service : <span>{{voiture.datemec|date('d/m/Y')}}</span></li>
+							<li>Couleur Extérieure : <span>{{voiture.couleurext}}</span></li>
+							<li>Couleur Intérieure : <span>{{voiture.couleurin}}</span></li>
+							<li>Premiere Main : <span>{{voiture.premieremain}}</span></li>
+						</ul>
+						</div>
+
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="space--xxs">
+                <div class="container">
+                    <div class="row text-center">
+                        <div  style="width:750px; margin-left:auto; margin-right:auto;" class="slider text-center" data-arrows="true" data-paging="true">
+                            <ul style="height:500px;" class="slides" >
+                            	{% for ph in voiture.medias %}
+                            	<li > <img style="height:500px; width:auto; margin-left:auto; margin-right:auto;" alt="{{ph.name}}" src="{{ph.large}}"> </li>
+                            	{% endfor %}
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+<section class="space--xxs">
+	<div class="container">
+		<div class="row">
+			<div class="">
+				<h2 class="text-center bg--secondary">Options et Équipements</h2>
+				<div class="col-sm-4">
+				<ul id="tags">
+				    	
+				        {% for tag in voiture.getTags() %}
+				            <li class="tagli"><i style="vertical-align:middle;" class="icon-Add icon--xs"></i> {{ tag.name }}</li>
+				            
+				        {% endfor %}
+				    	
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<style type="text/css">
+	
+	#tags{
+  width:760px;
+  margin-bottom:20px;
+  overflow:hidden;
+  
+}
+.tagli{
+  line-height:1.5em;
+ 	font-size: 16px;
+  float:left;
+  display:inline;
+}
+
+#tags li { width:25%; } 
+	
+</style>
+
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+Admin :
+
+	- Gestion Utilisateurs (ou pas)
+	- Medias :
+		- Gérer l'upload avec le watermark + la taille des photos
+
+	- Gérer l'ajout de tags "equipements"
+
+
+Front :
+
+	- Page Accueil
+	- Page Boutique
+	- Page Garage
+	- Page Liste de voitures
+	- Page Voiture
+
+
+		

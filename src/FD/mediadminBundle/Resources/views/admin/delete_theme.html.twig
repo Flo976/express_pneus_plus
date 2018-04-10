@@ -1,0 +1,27 @@
+{% extends 'FDmediadminBundle::base_admin.html.twig' %}
+
+{% block body %}
+<section class="space--md">
+	      <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-sm-offset-1 col-md-12 col-md-offset-2">
+                            <div class="row">
+
+                                <div class="boxed boxed--border">
+                                	<h1>Attention suppression de l'Article</h1>
+						{{ form_start(form_object, {'attr': {'class': 'form'}}) }}
+
+							<h2>{{dltheme.nom}} </h2>
+
+							{{ form_label(form_object.submit) }}
+								{{ form_widget(form_object.submit, { 'attr': {'class': 'btn col-md-6 inline'} }) }}
+								<a class="btn col-md-6 inline" href="/dashboard/admin/list-theme">Annuler</a>
+								{{ form_end(form_object) }}
+                               
+								  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  </section>        
+{% endblock %}	

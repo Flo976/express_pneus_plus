@@ -1,0 +1,28 @@
+     .triptych img:hover{
+                    opacity: 0.8;
+                    
+                }
+
+                .vip{
+                    position: absolute;
+                    top: 62%;
+                    left: 25%;
+                    max-width: 50%;
+                }
+
+                h1{
+                    margin-top: 1em;
+                    line-height: 1em;
+                    color: #fff;
+                    font-size: 12em;
+                    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+                }
+
+                	.white{
+                		color: #fff;
+                	}
+
+                	 .white a:hover{
+                		color: #fff;
+                	}
+                /*! Place your custom styles here */

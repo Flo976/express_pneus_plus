@@ -1,0 +1,238 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<section>
+	
+		<div class="container">
+			<div class="row">
+				{% for th in vip %}
+				<div class="col-md-12 bg--secondary car-list-container">
+					<h3>{{th.nom}} - {{th.soustitre}}</h3>
+					<div class="car-img">
+						{% for ph in th.medias|slice(0, 1) %}
+			 				<div class="mauto">			
+			 				<img class="image"  align="middle"  src="{{ph.large}}">
+			 				<div class="middle">
+							    <a href="/voitures-occasion/{{th.url}}"><div class="text">Voir</div></a>
+							  </div>
+			 				</div>			
+			 			{% endfor %}
+					</div>
+					<div class="car-descriptif">
+
+						<div class="row">
+						<div class="col-md-12 w100h20">
+							Le Lorem Ipsum est simplement du faux texte employé 
+						</div>	
+						<div class="col-md-6 inline">
+						<ul>
+							<li>Kilométrage      : <span>{{th.kilometrage}}</span> km</li>
+							<li>Année du modèle  : <span>{{th.annee}}</span></li>
+							<li>Prix du véhicule : <span>{{th.prix}}</span></li>
+							<li>Nombre de portes : <span>{{th.nbportes}}</span></li>
+							<li>Type de Boite    : <span>{{th.typeboite}}</span></li>
+						</ul>
+						</div>
+
+						<div class="col-md-6 inline">
+						<ul>
+							<li>Energie : <span>{{th.energie}}</span></li>
+							<li>Date de mise en service : <span>{{th.datemec|date('d/m/Y')}}</span></li>
+							<li>Couleur Extérieure : <span>{{th.couleurext}}</span></li>
+							<li>Couleur Intérieure : <span>{{th.couleurin}}</span></li>
+							<li>Premiere Main : <span>{{th.premieremain}}</span></li>
+						</ul>
+						</div>
+
+					
+						
+					</div>
+					</div>	
+					
+				</div>
+				{% endfor %}
+				{% for th in theme %}
+				<div class="col-md-12 bg--secondary car-list-container">
+					<h3>{{th.nom}} - {{th.soustitre}}</h3>
+					<div class="car-img">
+						{% for ph in th.medias|slice(0, 1) %}
+			 				<div class="mauto">			
+			 				<img class="image"  align="middle"  src="{{ph.large}}">
+			 				<div class="middle">
+							    <a href="/voitures-occasion/{{th.url}}"><div class="text">Voir</div></a>
+							  </div>
+			 				</div>			
+			 			{% endfor %}
+					</div>
+					<div class="car-descriptif">
+
+						<div class="row">
+						<div class="col-md-12 w100h20">
+							Le Lorem Ipsum est simplement du faux texte employé 
+						</div>	
+						<div class="col-md-6 inline">
+						<ul>
+							<li>Kilométrage      : <span>{{th.kilometrage}}</span> km</li>
+							<li>Année du modèle  : <span>{{th.annee}}</span></li>
+							<li>Prix du véhicule : <span>{{th.prix}}</span></li>
+							<li>Nombre de portes : <span>{{th.nbportes}}</span></li>
+							<li>Type de Boite    : <span>{{th.typeboite}}</span></li>
+						</ul>
+						</div>
+
+						<div class="col-md-6 inline">
+						<ul>
+							<li>Energie : <span>{{th.energie}}</span></li>
+							<li>Date de mise en service : <span>{{th.datemec|date('d/m/Y')}}</span></li>
+							<li>Couleur Extérieure : <span>{{th.couleurext}}</span></li>
+							<li>Couleur Intérieure : <span>{{th.couleurin}}</span></li>
+							<li>Premiere Main : <span>{{th.premieremain}}</span></li>
+						</ul>
+						</div>
+
+					
+						
+					</div>
+					</div>	
+					
+				</div>
+				{% endfor %}
+			</div>
+	</div>
+		
+</section>
+
+
+<style>
+
+.mauto{
+	margin-left: auto;
+   margin-right: auto;
+   width: 300px;
+  height: 200px;
+}
+
+
+.image {
+  opacity: 1;
+  display: block;
+  width: auto;
+  height: 100%;
+   margin-left: auto;
+   margin-right: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.car-img{
+	
+
+}
+
+.car-img:hover .image {
+  opacity: 0.7;
+  border:2px solid #fff;
+
+}
+
+.car-img:hover .middle {
+  opacity: 1;
+}
+
+a .text{
+text-decoration: none;
+
+}
+
+.text {
+  background-color: #fff;
+  color: #4a90e2;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 3px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 18px;
+  border:1px solid #4a90e2;
+}
+</style>
+
+
+<style type="text/css">
+
+.w100h20{
+	width: 100%;
+	height: 20px;
+	visibility: hidden;
+}
+
+.car-descriptif li span{
+	font-weight: 700;
+}
+
+
+
+.inline{
+	display: inline-block;
+}
+
+.car-list-container:hover h3{
+	color: #fff;
+}
+
+.car-list-container:hover{
+	background-color: #4a90e2;
+	color: #fff;
+
+}
+
+.car-list-container{
+	font-size: 16px;
+	margin-bottom: 20px;
+	padding: 15px;
+	border-radius: 3px;
+	position: relative;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	transition: color 0.5s ease,
+				background-color 0.5s ease;
+}
+
+.car-list-container h3{
+	margin-bottom: 0;
+}
+
+.car-list-container img{
+	display: inline;
+}
+
+.car-descriptif{
+	position: absolute;
+	left: 30%;
+	top: 20%;
+	display: inline;
+	text-align: left;
+	padding-left: 25px;
+}
+
+.car-img{
+	width: 30%;
+	 position: relative;
+	 height: 220px;
+
+}
+
+</style>
+{% endblock %}

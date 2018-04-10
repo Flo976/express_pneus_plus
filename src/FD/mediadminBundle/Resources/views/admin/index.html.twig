@@ -1,0 +1,84 @@
+{% extends 'FDmediadminBundle::base_admin.html.twig' %}
+
+{% block body %}
+<section class="cover cover-features imagebg text-center space--lg" >
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-7">
+                            <h1> Bienvenue {{app.user.username}} </h1>
+                            <p class="lead"> Configurer l'administration </p>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="feature feature-2 boxed boxed--border bg--white"> 
+                            	<div class="action-admin">
+                            		<h3 class="color--primary">Voitures</h3>
+	                            	<i class="icon icon-Car-3 color--primary"></i>
+	                                <div class="feature__body">
+	                                    <a class="btn btn--primary type--uppercase" href="/dashboard/admin/add-theme"> <span class="btn__text white">
+												Ajouter une Voiture
+											</span> </a>
+	                                </div>
+                                </div>	
+                                <hr>
+                                <div class="action-admin">
+	                                <i class="icon icon-Car-2 color--primary"></i>
+	                                <div class="feature__body">
+	                                    <a class="btn btn--primary type--uppercase" href="/dashboard/admin/list-theme"> <span class="btn__text white">
+												Gérer les Voitures
+											</span> </a>
+	                                </div>
+	                            </div>    
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="feature feature-2 boxed boxed--border bg--white"> 
+                            	<div class="action-admin">
+                            		<h3 class="color--primary">Médias</h3>
+	                            	<i class="icon icon-File-Pictures color--primary"></i>
+	                                <div class="feature__body">
+	                                    <a class="btn btn--primary type--uppercase" href="/dashboard/admin/add-medias"> <span class="btn__text white">
+												Ajouter des Médias
+											</span> </a>
+	                                </div>
+                                </div>	
+                                <hr>
+                                <div class="action-admin">
+	                                <i class="icon icon-Cloud-Picture color--primary"></i>
+	                                <div class="feature__body">
+	                                    <a class="btn btn--primary type--uppercase" href="#"> <span class="btn__text white">
+												Gérer les Médias
+											</span> </a>
+	                                </div>
+	                            </div>    
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature feature-2 boxed boxed--border bg--white"> 
+                            	<div class="action-admin">
+                            		<h3 class="color--primary">Utilisateurs</h3>
+	                            	<i class="icon icon-Add-User color--primary"></i>
+	                                <div class="feature__body">
+	                                    <a class="btn btn--primary type--uppercase" href="#"> <span class="btn__text white">
+												Ajouter un Utilisateur
+											</span> </a>
+	                                </div>
+                                </div>	
+                                <hr>
+                                <div class="action-admin">
+	                                <i class="icon icon-Find-User color--primary"></i>
+	                                <div class="feature__body">
+	                                    <a class="btn btn--primary type--uppercase" href="#"> <span class="btn__text white">
+												Gérer les utilisateurs
+											</span> </a>
+	                                </div>
+	                            </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+{% endblock %}

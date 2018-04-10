@@ -1,0 +1,61 @@
+{% extends 'FDmediadminBundle::base_admin.html.twig' %}
+
+{% block body %}
+	<section>
+ 		<div class="container">
+ 			<div class="row">
+		 		<div class="col-sm-12 tab-admin ">
+		 			
+		 				<div class="text-center">
+		 				<i class="icon icon--lg icon-Car-3 white"></i>
+		 				<h1 class="white">Gestion des Voitures</h1>
+		 				<div class="admin-buttons">
+                            <a class="btn btn--secondary type--uppercase" href="/dashboard/admin/add-theme">
+                                 <span class="btn__text red">
+                                    Ajouter une voiture
+                                 </span> 
+                            </a>
+                            <a class="btn btn--secondary type--uppercase" href="/dashboard/admin">
+                                 <span class="btn__text red">
+                                    Retour
+                                 </span> 
+                            </a>
+                        </div>
+		 					 				<!--<a class="btn-admin-add" href="/dashboard/admin/users/add">Ajouter un Utilisateur</a>-->
+		 			</div>
+		 			<div class="tab-admin-in bg-grey">
+		 			<table class="table-admin">
+		 				<tr>
+		 					<th>Id</th>
+		 					<th>Photo</th>
+		 					<th>Nom de la voiture</th>
+		 					
+		 					<th>Edition</th>
+		 					<th>Supression</th>
+		 				 </tr>
+		 			{% for th in theme %}
+	 					<tr>
+	 						<td>{{th.id}}</td>
+	 						<td>
+	 							{% for ph in th.medias|slice(0, 1) %}
+	 							
+	 							<img style="max-width:150px;max-height:200px;" src="{{ph.large}}">
+	 							
+	 							{% endfor %}
+	 						</td>
+	 						<td>{{th.nom}}</td>
+	 						
+	 						<td> <a class="btn-admin-edit" href="/dashboard/admin/list-theme/edit-{{th.id}}">Editer</a></td>
+	 						<td> <a class="btn-admin-delete" href="/dashboard/admin/list-theme/delete-{{th.id}}">Supprimer</a></td>
+	 					</tr>	 
+		 			{% endfor %}
+		 			</table>		
+		 			</div>
+		 		</div>
+		 		
+		 	</div>	
+ 		</div>
+ 	</section>
+	
+		
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'FDmediadminBundle::base_admin.html.twig' %}
+
+{% block body %}
+     
+  
+
+
+            <section class="cover space--lg">
+                <div class="container">
+                    
+                        
+                      
+                    <i class="icon icon--lg icon-File-Pictures white"></i>
+                    <h1 class="white">Envoyer des Fichiers</h1>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <select id="theme" name="theme" onchange="myFunction()" class="red" class="admin-placeholder">
+                            
+                                <option value="0" disabled selected>Séléctionnez une voiture</option>
+                                {% for th in theme %}
+                                <option value="{{th.id}}">{{th.nom}}</option>
+                                {% endfor %}
+                            </select>
+                            </div>
+                        </div> 
+                        <br>
+                        <div class="admin-buttons">
+                            <a class="btn btn--secondary type--uppercase" href="/dashboard/admin/list-medias">
+                                 <span class="btn__text red">
+                                    Gérer les médias
+                                 </span> 
+                            </a>
+                            <a class="btn btn--secondary type--uppercase" href="/dashboard/admin">
+                                 <span class="btn__text red">
+                                    Retour
+                                 </span> 
+                            </a>
+                        </div>
+                        
+
+                	 <form class="dropzone my-dropzone white" id="form_snippet_image" action="/dashboard/ajax/snippet/image/send/0">
+                         
+					</form>
+                   
+                </div>
+            </section>
+ 
+
+
+
+
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="/css/dropzone.css">
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript" src="{{asset('js/exif.js')}}"></script> 
+<script type="text/javascript" src="{{asset('js/dropzone.js')}}"></script>
+<script type="text/javascript">
+var _actionToDropZone = document.getElementById("form_snippet_image").action;
+
+//je définis ma zone de drop grâce à l'ID de ma div citée plus haut.
+Dropzone.autoDiscover = false;
+
+var myDropzone = new Dropzone("#form_snippet_image", {
+ url: _actionToDropZone, 
+ resizeHeight: 1000,
+});
+</script>
+ 
+ <script>
+        function myFunction() {
+        var x = document.getElementById("theme").value;
+        document.getElementById("form_snippet_image").action = "/dashboard/ajax/snippet/image/send/" + x;
+         myDropzone.options.url = document.getElementById("form_snippet_image").action;
+            
+                                      }
+                        </script>  
+
+{% endblock %}

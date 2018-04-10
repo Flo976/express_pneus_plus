@@ -1,0 +1,203 @@
+{% extends 'FDmediadminBundle::base_admin.html.twig' %}
+
+{% block stylesheets %}
+<link href="https://code.jquery.com/ui/1.10.4/themes/start/jquery-ui.css" rel="stylesheet">
+        <link href="{{ asset('css/jquery.tagit.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/tagit.ui-zendesk.css') }}" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+	 <section class="text-center">
+                <div class="container">
+                    <div class="row">
+                    	<div class="col-sm-12 text-center">
+                    	<h1 class="white text-center">Ajouter une voiture</h1>
+                    	<br>
+                   		 </div>
+                        <div class="col-sm-12 text-center">
+                           
+                            	{{ form_start(form_object) }}
+								   	
+								   		<div class="col-sm-6 inline">
+								   		<div class="hide">
+										{{ form_label(form_object.nom) }}
+										</div>									
+									    {{ form_errors(form_object.nom) }}
+									    {{ form_widget(form_object.nom, { 'attr': {'class': 'admin-placeholder'} }) }}
+								   		</div>
+
+								   		<div class="col-sm-6 inline">
+								   			<div class="hide">
+										{{ form_label(form_object.soustitre) }}									</div>
+									    {{ form_errors(form_object.soustitre) }}
+									    {{ form_widget(form_object.soustitre, { 'attr': {'class': 'admin-placeholder'} }) }}
+								   		</div>
+
+								   		<hr><br>
+
+								   		<div class="col-sm-6 inline">
+								   			<div class="hide">
+										{{ form_label(form_object.description) }}									</div>
+									    {{ form_errors(form_object.description) }}
+									    {{ form_widget(form_object.description, { 'attr': {'class': 'admin-placeholder'} }) }}
+								   		</div>
+
+								   		<hr><br>
+
+								   		<div class="col-sm-6 inline">
+								   				<div class="hide">
+										{{ form_label(form_object.kilometrage) }}									</div>
+									    {{ form_errors(form_object.kilometrage) }}
+									    {{ form_widget(form_object.kilometrage, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+								   		<div class="col-sm-6 inline">
+								   				<div class="hide">
+										{{ form_label(form_object.annee) }}									</div>
+									    {{ form_errors(form_object.annee) }}
+									    {{ form_widget(form_object.annee, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+
+								   		<div class="col-sm-6 inline">
+								   				<div class="hide">
+										{{ form_label(form_object.prix) }}									</div>
+									    {{ form_errors(form_object.prix) }}
+									    {{ form_widget(form_object.prix, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+
+								   		<hr><br>
+
+								   		<div class="col-sm-6 inline">
+								   				<div class="hide">
+										{{ form_label(form_object.nbportes) }}									</div>
+									    {{ form_errors(form_object.nbportes) }}
+									    {{ form_widget(form_object.nbportes, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+								   		<div class="col-sm-6 inline">
+								   				<div class="hide">
+										{{ form_label(form_object.pfisc) }}									</div>
+									    {{ form_errors(form_object.pfisc) }}
+									    {{ form_widget(form_object.pfisc, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+
+								   		<div class="col-sm-6 inline">
+								   				<div class="hide">
+										{{ form_label(form_object.pdin) }}									</div>
+									    {{ form_errors(form_object.pdin) }}
+									    {{ form_widget(form_object.pdin, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+				   						
+				   						</div>
+
+				   						<br><br>
+
+
+								   		<div class="col-sm-6 inline">
+								   				<div class="hide">
+										{{ form_label(form_object.typeboite) }}									</div>
+									    {{ form_errors(form_object.typeboite) }}
+									    {{ form_widget(form_object.typeboite, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+								   		<div class="col-sm-6 inline">
+								   				<div class="hide">
+										{{ form_label(form_object.couleurin) }}									</div>
+									    {{ form_errors(form_object.couleurin) }}
+									    {{ form_widget(form_object.couleurin, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+
+								   		<div class="col-sm-6 inline">
+								   				<div class="hide">
+										{{ form_label(form_object.couleurext) }}									</div>
+									    {{ form_errors(form_object.couleurext) }}
+									    {{ form_widget(form_object.couleurext, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+				   						
+				   						</div>
+
+				   						<br><br>
+
+				   						<div class="col-sm-6 inline">
+								   				
+										{{ form_label(form_object.datemec) }}									
+									    {{ form_errors(form_object.datemec) }}
+									    {{ form_widget(form_object.datemec, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+
+								   		<br><br>
+
+								   		<div class="row">
+						                {# Tags #}
+						                <div class="col-sm-12">
+						                    {% do form_object.tags.setRendered %}
+						                    {{ form_label(form_object.tags) }}
+						                    <ul id="tags" data-prototype-field-name="{{ form_object.tags.vars.prototype.name.vars.full_name }}"></ul>
+						                    {{ form_errors(form_object.tags) }}
+						                </div>
+						            	</div>
+						            <br>
+						            <br>
+						            		<div class="col-sm-6 ">
+								   				
+										{{ form_label(form_object.energie) }}
+										<br>									
+									    {{ form_errors(form_object.energie) }}
+									    {{ form_widget(form_object.energie, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+
+								   			<div class="col-sm-6 ">
+								   				
+										{{ form_label(form_object.premieremain) }}
+										<br>									
+									    {{ form_errors(form_object.premieremain) }}
+									    {{ form_widget(form_object.premieremain, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+
+								   			<div class="col-sm-6 ">
+								   				
+										{{ form_label(form_object.active) }}							<br>		
+									    {{ form_errors(form_object.active) }}
+									    {{ form_widget(form_object.active, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+								   			<div class="col-sm-6 ">
+								   				
+										{{ form_label(form_object.vip) }}								<br>	
+									    {{ form_errors(form_object.vip) }}
+									    {{ form_widget(form_object.vip, { 'attr': {'class': 'admin-placeholder trois'} }) }}
+								   		</div>
+
+								   		
+								   		<div class="col-sm-12 ">
+								   			
+										<button class="btn btn--primary type--uppercase" type="submit">
+											Ajouter une voiture
+										</button>
+										</div>
+										{{ form_end(form_object) }}   
+                           		
+
+                    </div>
+                </div>
+            </section>
+        	
+{% endblock %}
+
+{% block javascripts %}
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <script src="{{ asset('js/tag-it.js') }}"></script>
+        <script>
+            $(document).ready(function () {
+ 
+                var $tags = $('ul#tags');
+ 
+                var prototypeField = $tags.data('prototype-field-name');
+                var fieldIndex = 0;
+ 
+                $tags.tagit({
+                    fieldName: prototypeField.replace(/__name__/g, fieldIndex),
+                    beforeTagAdded: function (event, ui) {
+                        fieldIndex++;
+                        $(this).tagit({fieldName: prototypeField.replace(/__name__/g, fieldIndex)});
+                    }
+                });
+            });
+        </script>
+{% endblock %}

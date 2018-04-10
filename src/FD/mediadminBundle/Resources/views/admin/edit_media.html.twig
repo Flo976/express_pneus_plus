@@ -1,0 +1,43 @@
+{% extends 'FDmediadminBundle::base_admin.html.twig' %}
+
+{% block body %}
+	 <section class="text-center">
+                <div class="container">
+                    <div class="row">
+                    	<h1 class="white">Editer un Media</h1>
+                        <div class="col-sm-12 col-md-12">
+                        	<img src="{{media.large}}">
+                            <div class="row">
+                            	{{ form_start(form_object) }}
+								   	<div class="col-sm-8">
+								   		<div style="display:none">
+										{{ form_label(form_object.file) }}
+										</div>
+									    {{ form_errors(form_object.file) }}
+									    {{ form_widget(form_object.file, { 'attr': {'class': 'admin-placeholder'} }) }}
+								    </div>
+				   					<div class="col-sm-4">
+										<button style="width:200px;" class="btn btn--primary type--uppercase" type="submit">
+											Editer la photo
+										</button>
+										{{ form_end(form_object) }}   
+                           			</div>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-4 white">
+                    	<ul>
+                    		<li><h3 class="white"> Nom de l'image : {{media.name}}</h3></li>
+                    		<li><h3 class="white"> Type d'image : {{media.type}}</h3></li>
+                    		<li><h3 class="white"> Largeur : {{media.width}}</h3></li>
+                    		<li><h3 class="white"> Hauteur : {{media.height}}</h3></li>
+                    	</ul>
+                    	
+                    	
+                    	
+                    	
+
+                    </div>-->
+                </div>
+            </section>
+        	
+{% endblock %}

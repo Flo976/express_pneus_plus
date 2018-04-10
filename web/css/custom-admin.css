@@ -1,0 +1,167 @@
+
+
+/* Couleurs Globales */
+.bg-red{
+	background-color: #4a90e2;
+}
+
+.white{
+	color: #fff !important;
+}
+
+.red{
+	color : #4a90e2 !important;
+}
+
+/* NavBarAdmin */
+.nav-bar-admin{
+	width: 250px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	z-index: 9999;
+}
+
+.nav-bar-admin-logo{
+	background-color: #4a90e2;
+	width: 100%;
+	
+}
+
+.nav-bar-admin-hr{
+	width: 100%;
+	margin-top:0px;
+	/*margin-bottom: 3px;*/
+	border: 2px solid #4a90e2;
+}
+
+.nav-bar-admin-search{
+	color: #000;
+}
+
+.nav-bar-admin-search input{
+	border-radius: 0px;
+	color: #fff;
+	border-top: 0px;
+	border-bottom: 2px solid #fff;
+	border-right: 2px solid #fff;
+	border-left:0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	padding-left: 5px;
+	background-color: #4a90e2;
+
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: color: #fff !important;
+}
+::placeholder {
+    color: #fff !important;
+    opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: color: #fff !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: color: #fff !important;
+}
+
+.admin-placeholder::placeholder {
+    color: #4a90e2 !important;
+    opacity: 1; /* Firefox */
+}
+
+
+.nav-bar-admin-menu{
+	text-align: center;
+	color: #4a90e2;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.nav-bar-admin-menu li{
+	width: 100%;
+	padding: 10px;
+	border-bottom: 1px solid #4a90e2;
+}
+
+.nav-bar-admin-menu a{
+	width: 100%;
+	height: 100%;
+
+}
+
+.nav-bar-admin-menu a{
+	text-decoration: none;
+
+}
+
+.nav-bar-admin-menu li:hover{
+	background-color: #4a90e2 !important;
+	color: #fff;
+	border-right: 2px solid #fff; 
+}
+
+/* dashboard */
+
+.action-admin{
+	padding: 10px;
+}
+
+.admin-buttons{
+	margin: 10px;
+}
+
+/* tableaux */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr{
+	background-color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.hide{
+                           				display: none;
+                           			}
+
+                           			.inline{
+                           				display: inline;
+                           			}
+
+                           			input{
+                           				max-width: 30%;
+                           			}
+
+                           			select{
+                           				max-width: 30%;
+                           				margin-right: 10px;
+                           				color: #4a90e2;
+                           			}
+
+                           			label{
+                           				color: #fff;
+                           				font-size: 16px;
+                           				font-weight: 700;
+                           				
+                           			}
+
+                           			 .trois input{
+                           				max-width: 30%;
+                           			}

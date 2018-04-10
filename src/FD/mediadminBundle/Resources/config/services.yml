@@ -1,0 +1,4 @@
+services:
+#    f_dmediadmin.example:
+#        class: FD\mediadminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
